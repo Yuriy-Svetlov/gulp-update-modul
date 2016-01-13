@@ -1,0 +1,36 @@
+{
+  "name": "gulp-update-modul",
+  "author": {
+    "name": "Riko Vironi",
+    "email": "xor.wind@mail.ru"
+  },
+  "version": "1.0.0",
+  "description": "Auto update all node modules",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "jshint index.js test/",
+    "test": "mocha"
+  },
+  "keywords": [
+    "update",
+    "update-",
+    "update node",
+    "update node modul",
+    "update node modules",
+    "update-node",
+    "update-node modul",
+    "update-node modules",
+    "gulpplugin"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.3.4",
+    "npm": "^3.5.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
+}
