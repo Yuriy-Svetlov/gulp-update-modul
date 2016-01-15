@@ -1,11 +1,10 @@
 {
-
   "name": "gulp-update-modul",
   "author": {
     "name": "Riko Vironi",
     "email": "xor.wind@mail.ru"
   },
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Auto update all node modules",
   "main": "index.js",
   "scripts": {
@@ -26,12 +25,11 @@
   "license": "MIT",
   "devDependencies": {
     "chalk": "^1.1.1",
-    "gulp-mocha": "^2.2.0",
-    "mocha": "^2.3.4",
-    "npm": "^3.5.3"
+    "mocha": "^2.3.4"
   },
-  "directories": {
-    "test": "test"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/semiromid/gulp-update-modul.git"
   },
   "dependencies": {}
 }
