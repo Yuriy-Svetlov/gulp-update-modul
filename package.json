@@ -4,7 +4,7 @@
     "name": "Riko Vironi",
     "email": "xor.wind@mail.ru"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Auto update all node modules",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,8 @@
   "license": "MIT",
   "devDependencies": {
     "chalk": "^1.1.1",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "npm": "^3.5.3"
   },
   "repository": {
     "type": "git",
