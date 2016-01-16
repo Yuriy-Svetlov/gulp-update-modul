@@ -1,4 +1,4 @@
 language: node_js
 node_js:
-  - 3.3.12
+  - 4.1
   - iojs
