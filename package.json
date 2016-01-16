@@ -4,7 +4,7 @@
     "name": "Riko Vironi",
     "email": "xor.wind@mail.ru"
   },
-  "version": "1.0.7",
+  "version": "1.2.2",
   "description": "Auto update all node modules",
   "main": "index.js",
   "scripts": {

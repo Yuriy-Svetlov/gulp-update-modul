@@ -1,12 +1,70 @@
 # gulp-update-modul
 
-gulp-update-modul is a [gulp](https://github.com/semiromid/gulp-update-modul) plugin to update modules easily.
+> [gulp-update-modul](https://github.com/semiromid/gulp-update-modul) is a gulp plugin to update modules easily.
 
 
-gulp-update-modul is a plugin to auto update all node modules. / Этот плагин предназначен для автоматического обновления всех установленных модулей, которые отражены в файле "package.json" приложения.
+[En]
+gulp-update-modul is a plugin to auto update all node modules. 
+
+[Ru]
+gulp-update-modul РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅ РґР»СЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РѕР±РЅРѕРІР»РµРЅРёСЏ РІСЃРµС… СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹С… РјРѕРґСѓР»РµР№ РІ РїСЂРёР»РѕР¶РµРЅРёРё.
 
 
-TEST TEST TEST 
+
+## Install
+
+gulp-update-modul provides simple  updates all modules.
+
+First, install `gulp-update-modul` as a development dependency:
+
+```shell
+npm install --save gulp-update-modul 
+```
+
+## Usage
+
+Then, add it to your gulpfile.js:
+
+```javascript
+upmodul = require("gulp-update-modul");
+
+gulp.task('update-modul', function () {
+    gulp.src('package.json')
+    .pipe(upmodul('latest')); //update all modules latest version.
+});
+```
+
+
+Example use:
+
+```javascript
+upmodul = require("gulp-update-modul");
+
+
+//watch
+gulp.task('watch', function () {
+    gulp.watch('src/sass/**/*.scss', ['sass']);
+    gulp.start('update-modul');
+});
+
+//update-modul
+gulp.task('update-modul', function () {
+    gulp.src('package.json')
+    .pipe(upmodul('latest')); //update all modules latest version.
+});
+
+```
+## API
+
+### upmodul('options')
+
++ latest ('Default')
+
+  Update all modules latest version.
+
++ wanted 
+
+  update to all modules wanted  version.
 
 ## License
 

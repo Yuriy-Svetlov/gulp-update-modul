@@ -13,8 +13,7 @@ const chalk = require('chalk');
 module.exports = function (latest) {
     var readable = new Stream.Transform({ objectMode: true });
     readable._transform = function (file, unused, callback) {
-       //var obj = JSON.parse(file.contents);
-       //console.log('' + obj.name);
+
        exec_command0(latest);
        return readable;
     }
@@ -22,21 +21,18 @@ module.exports = function (latest) {
 }
 
 
-///////////////////////////////////////////////////////////////
-//npm outdated global
-///////////////////////////////////////////////////////////////
-//"latest": "2.1.0",
-//"current": "2.0.0",
 
+
+//M-1-1 ==================================================================
 function exec_command0(losk_version) {
-    console.log(chalk.cyan('Check update packege...'));
+    console.log(chalk.cyan('Check update package...'));
     exec('npm outdated -json --long',
     (error, stdout, stderr) => {
         countpackege = 0;
         keysgenerel = new Array();
         keysgenerel.fill(0);
 
-        losk_version = 'latest'; //wanted
+        losk_version = 'latest'; 
         if (error !== null) {
             console.log(`exec error 1 : ${error}`);
         } else {
@@ -54,14 +50,16 @@ function exec_command0(losk_version) {
                     }
                     if (losk_version == 'wanted') {
                         if (obj[keys[i]].wanted > obj[keys[i]].current) {
+                           //.......
 
-                            //i = keys.length;
-                            //console.log("rrrrrrrrrrrrrrrr - ");
+
+                           //.......
                         }
                     }
-                    if (i == keys.length - 1) {
-                        //console.log(keysgenerel);
+                    if (i == keys.length - 1 && losk_version == 'latest' && countpackege != 0) {
                         exec_command1();
+                    } else if (i == keys.length - 1 && losk_version == 'latest' && countpackege == 0) {
+                        console.log(chalk.cyan('Completed!'));
                     }
                  }
             } else {
@@ -69,8 +67,14 @@ function exec_command0(losk_version) {
             }
         }
     });
-}
+}//=================================================================================
 
+///////////////////////////////////////////////////////////////
+//npm update latest
+///////////////////////////////////////////////////////////////
+
+
+//M-2-1 ============================================================================
 function exec_command1() {
     exec('npm outdated',
     (error, stdout, stderr) => {
@@ -88,13 +92,11 @@ function exec_command1() {
 }
 
 
-
-
 function exec_command2() {
     exec('npm outdated -json --long',
     (error, stdout, stderr) => {
         lengmass = lengmass;
-        //console.log("test - " + stdout);
+
         if (error !== null) {
             console.log(`exec error 1 : ${error}`);
         } else {
@@ -115,23 +117,19 @@ function exec_command2() {
 function keygen(namemodul){
     var lock = false;
     for (var i = 0 ; keysgenerel.length > i ; i++) {
-        
         if(keysgenerel[i]==namemodul){
             lock = true;
             i = keysgenerel.length;
         }
     }
-
     return lock;
 }
-
 
 
 var wil = function datamodules(obj, keys, i) {
     i = i - 1;
     var modulUp = keys[i];
     var locked = keygen(keys[i]);
-    console.log(chalk.blue('i  - ' + i));
 
     if (locked) {
         if (obj[keys[i]].type == 'devDependencies') {
@@ -143,19 +141,13 @@ var wil = function datamodules(obj, keys, i) {
             exec_command_save(modulUp);
         }
     }
-    console.log(chalk.blue('111  - ' + locked));
-    console.log(chalk.blue('222 - ' + keys[i]));
+
     lengmass = lengmass - 1;
     if (i != 0 && !locked) {
         datamodules(obj, keys, i);
     }
 }
-
-
-
-
-
-
+//=================================================================================
 
 
 //=================================================================================
@@ -163,7 +155,7 @@ function exec_command_save_dev(modulupdate) {
     console.log(chalk.blue('exec_command_save_dev  - ' + modulupdate));
     exec('npm install ' + modulupdate + ' --save-dev',
     (error, stdout, stderr) => {
-        console.log(`stdout: ${stdout}`);
+        console.log(`${stdout}`);
         console.log(chalk.magenta('Finish:') + " " + chalk.green(modulupdate));
         console.log(chalk.red('________________________________________________'));
 
@@ -183,7 +175,7 @@ function exec_command_save(modulupdate) {
     console.log(chalk.blue('exec_command_save  - ' + modulupdate));
     exec('npm install ' + modulupdate + ' --save',
     (error, stdout, stderr) => {
-        console.log(`stdout: ${stdout}`);
+        console.log(`${stdout}`);
         console.log(chalk.magenta('Finish:') + " " + chalk.green(modulupdate));
         console.log(chalk.red('________________________________________________'));
 
@@ -203,3 +195,12 @@ function exec_command_save(modulupdate) {
 
 
 
+
+
+
+///////////////////////////////////////////////////////////////
+//npm update wanted
+///////////////////////////////////////////////////////////////
+
+
+//M - 1 - 2 ========================================================================
