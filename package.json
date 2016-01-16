@@ -8,8 +8,7 @@
   "description": "Auto update all node modules",
   "main": "index.js",
   "scripts": {
-    "pretest": "jshint index.js test/",
-    "test": "mocha"
+    "test": "mocha -R spec"
   },
   "keywords": [
     "update",
