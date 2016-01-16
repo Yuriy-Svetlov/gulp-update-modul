@@ -2,6 +2,7 @@
 
 > [gulp-update-modul](https://github.com/semiromid/gulp-update-modul) is a gulp plugin to update modules easily.
 
+[![NPM](https://nodei.co/npm/gulp-update-modul.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gulp-update-modul/)
 
 [En]
 gulp-update-modul is a plugin to auto update all node modules. 
@@ -65,6 +66,16 @@ gulp.task('update-modul', function () {
 + wanted 
 
   update to all modules wanted  version.
+
+
+## Bugs
+
+* Please to write
+
+  * github - [github.com/semiromid/gulp-update-modul](https://github.com/semiromid/gulp-update-modul) 
+
+  * email - xor.wind@mail.ru
+ 
 
 ## License
 
