@@ -4,6 +4,10 @@
 
 [![NPM](https://nodei.co/npm/gulp-update-modul.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gulp-update-modul/)
 
+
+[![build status](https://travis-ci.org/semiromid/gulp-update-modul/builds/102869205)](https://travis-ci.org/semiromid/gulp-update-modul.svg?branch=master)
+
+
 [En]
 gulp-update-modul is a plugin to auto update all node modules. 
 
