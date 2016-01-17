@@ -20,7 +20,7 @@ gulp-update-modul предназначен для автоматического
 
 gulp-update-modul provides simple  updates all modules.
 
-First, install `gulp-update-modul` as a development dependency:
+First, install `gulp-update-modul` as dependency:
 
 ```shell
 npm install --save gulp-update-modul 
