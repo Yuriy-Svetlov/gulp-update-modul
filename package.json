@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/supervisor app",
-    "test": "node_modules/.bin/mocha -w"
+    "test": "node_modules/.bin/mocha"
   },
   "keywords": [
     "update",
