@@ -5,7 +5,7 @@
 [![NPM](https://nodei.co/npm/gulp-update-modul.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gulp-update-modul/)
 
 
-[![build status](https://travis-ci.org/semiromid/gulp-update-modul.svg?branch=master)](https://travis-ci.org/semiromid/gulp-update-modul/builds/102869205)
+[![build status](https://travis-ci.org/semiromid/gulp-update-modul.svg)](https://travis-ci.org/semiromid/gulp-update-modul)
 
 
 [En]
