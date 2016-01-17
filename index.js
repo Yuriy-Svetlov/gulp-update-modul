@@ -13,8 +13,10 @@ const chalk = require('chalk');
 module.exports = function (latest) {
     var readable = new Stream.Transform({ objectMode: true });
     readable._transform = function (file, unused, callback) {
+        exec_command0(latest);
+        //....
 
-       exec_command0(latest);
+        //....
        return readable;
     }
     return readable;
@@ -32,7 +34,7 @@ function exec_command0(losk_version) {
         keysgenerel = new Array();
         keysgenerel.fill(0);
 
-        losk_version = 'latest'; 
+        
         if (error !== null) {
             console.log(`exec error 1 : ${error}`);
         } else {
@@ -50,7 +52,7 @@ function exec_command0(losk_version) {
                     }
                     if (losk_version == 'wanted') {
                         if (obj[keys[i]].wanted > obj[keys[i]].current) {
-                           //.......
+                            //.......
 
 
                            //.......
@@ -60,6 +62,8 @@ function exec_command0(losk_version) {
                         exec_command1();
                     } else if (i == keys.length - 1 && losk_version == 'latest' && countpackege == 0) {
                         console.log(chalk.cyan('Completed!'));
+                    } else if (i == keys.length - 1 && losk_version == 'wanted' && keys.length != 0) {
+                        exec_command1_wanted();
                     }
                  }
             } else {
@@ -152,7 +156,7 @@ var wil = function datamodules(obj, keys, i) {
 
 //=================================================================================
 function exec_command_save_dev(modulupdate) {
-    console.log(chalk.blue('exec_command_save_dev  - ' + modulupdate));
+    console.log(chalk.blue('Upgrade ' + modulupdate + '. Please wait...'));
     exec('npm install ' + modulupdate + ' --save-dev',
     (error, stdout, stderr) => {
         console.log(`${stdout}`);
@@ -172,7 +176,7 @@ function exec_command_save_dev(modulupdate) {
 }
 
 function exec_command_save(modulupdate) {
-    console.log(chalk.blue('exec_command_save  - ' + modulupdate));
+    console.log(chalk.blue('Upgrade ' + modulupdate + '. Please wait...'));
     exec('npm install ' + modulupdate + ' --save',
     (error, stdout, stderr) => {
         console.log(`${stdout}`);
@@ -204,3 +208,9 @@ function exec_command_save(modulupdate) {
 
 
 //M - 1 - 2 ========================================================================
+
+function exec_command1_wanted() {
+
+    console.log(chalk.red('Version \'wanted\'  not work, use \'latest\' version.'));
+
+}
