@@ -31,7 +31,7 @@ npm install --save gulp-update-modul
 Then, add it to your gulpfile.js:
 
 ```javascript
-upmodul = require("gulp-update-modul");
+var upmodul = require("gulp-update-modul");
 
 gulp.task('update-modul', function () {
     gulp.src('package.json')
@@ -43,12 +43,11 @@ gulp.task('update-modul', function () {
 Example use:
 
 ```javascript
-upmodul = require("gulp-update-modul");
+var upmodul = require("gulp-update-modul");
 
 
 //watch
 gulp.task('watch', function () {
-    gulp.watch('src/sass/**/*.scss', ['sass']);
     gulp.start('update-modul');
 });
 
