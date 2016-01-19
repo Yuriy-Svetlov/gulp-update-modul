@@ -82,23 +82,21 @@ gulp.task('update-modul', function () {
 
   + latest ('Default')
 
-    Update all modules 'latest' version.
-
+      Update all modules 'latest' version.
 
   + wanted 
 
-    Update to all modules 'wanted'  version.
+      Update to all modules 'wanted'  version.
 
 + Process
 
   + true ('Default')
 
-    Update in auto mode.
-
+      Update in auto mode.
 
   + false
     
-	Asks: Do you want to update: packagename  [Y(yes)/N(no)] ?
+	  Asks: Do you want to update: packagename  [Y(yes)/N(no)] ?
 
 
 
