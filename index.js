@@ -3,16 +3,37 @@ var Stream = require('stream'),
     exec = require('child_process').exec,
     obj,
     countpackege,
-    losk_version,
+    g_losk_version,
+    autoupdate,
     lengmass,
     keys;
-const colors = require('colors');
-
+const colors = require('colors'),
+    readline = require('readline');
 
 module.exports = function (latest) {
     var readable = new Stream.Transform({ objectMode: true });
     readable._transform = function (file, unused, callback) {
-        exec_command0(latest);
+
+    autoupdate = 'true';
+    g_losk_version = "latest";
+     // [START]
+     //s------------------------------------------------------------------
+       var mass_latest = latest.split(',');
+       for (var isep = 0 ; mass_latest.length > isep ; isep++) {
+           switch (isep) {
+               case 0:
+                   g_losk_version = mass_latest[isep].trim();
+                   break
+               case 1:
+                   autoupdate = mass_latest[isep].trim();
+                   break
+           }
+       }
+    //s------------------------------------------------------------------
+    exec_command0(g_losk_version);
+
+
+        
         //....
         //
         // Will be updated
@@ -130,13 +151,24 @@ var wil = function datamodules(obj, keys, i) {
     var modulUp = keys[lengmass];
 
     if (obj[keys[lengmass]].type == 'devDependencies') {
-        var pos = lengmass + 1;
-        console.log(colors.green('Update ') + colors.green("position: ") + "[" + pos + "]");
-        exec_command_save_dev(modulUp);
+        //auto-update
+        if (autoupdate == 'true') {
+            var pos = lengmass + 1;
+            console.log(colors.green('Update ') + colors.green("position: ") + "[" + pos + "]");
+            exec_command_save_dev(modulUp);
+        } else {
+            consolloge(modulUp, 'devDependencies');
+        }
     } else if (obj[keys[lengmass]].type == 'dependencies') {
-        var pos = lengmass + 1;
-        console.log(colors.green('Update ') + colors.green("position: ") + "[" + pos + "]");
-        exec_command_save(modulUp);
+        //auto-update
+        if (autoupdate == 'true') {
+            var pos = lengmass + 1;
+            console.log(colors.green('Update ') + colors.green("position: ") + "[" + pos + "]");
+            exec_command_save(modulUp);
+        } else {
+            consolloge(modulUp, 'dependencies');
+
+        }
     }
 }
 //=================================================================================
@@ -225,9 +257,22 @@ function exec_command1_wanted() {
 var timerId;
 function progress(lock) {
     if (lock) {
-        var P = ["\\", "|", "/", "-"];
-        var x = 0;
-        timerId = setInterval(function () { process.stdout.write("\r" + P[x++]); x &= 3; }, 250);
+        var P = ["\\", "|", "/", "-"],
+            x = 0,
+            space = [""],
+            x2 = 0,
+            xi = 0,
+            timeI = 0;
+        timerId = setInterval(function () {
+            process.stdout.write("\r" + space[xi] + "[" + P[x++] + "]");
+            x &= 3;
+            timeI++;
+            if (timeI == 20) {
+                xi = xi + 1;
+                space[space.length] = space[space.length - 1] + "-";
+                timeI = 0;
+            }
+        }, 250);
     } else {
         clearInterval(timerId);
         process.stdout.clearLine();
@@ -237,6 +282,45 @@ function progress(lock) {
 function sleep(ms) {
     var unixtime_ms = new Date().getTime();
     while (new Date().getTime() < unixtime_ms + ms) { }
+}
+
+
+function consolloge(packagename, dev_or_save) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    rl.question('Do you want to update: ' + colors.green(packagename) + " [Y(yes)/N(no)] ? ", (answer) => {
+        if (answer == "yes" || answer == "y" || answer == "Y") {
+            rl.close();
+            //=============================================================
+            if (dev_or_save == 'devDependencies') {
+                var pos = lengmass + 1;
+                console.log(colors.green('Update: ') + colors.green("position ") + "[" + pos + "]");
+                exec_command_save_dev(packagename);
+
+            } else if (dev_or_save == 'dependencies') {
+                var pos = lengmass + 1;
+                console.log(colors.green('Update: ') + colors.green("position ") + "[" + pos + "]");
+                exec_command_save(packagename);
+            }
+            //=============================================================
+        } else if (answer == "no" || answer == "n" || answer == "N") {
+            rl.close();
+            //=============================================================
+            if (lengmass != 0) {
+                lengmass = lengmass - 1;
+                setTimeout(wil, 3000, obj, keys, lengmass);
+            } else {
+                console.log(colors.cyan('Completed!'));
+            }
+            //=============================================================
+        } else {
+            console.log(colors.red("Use the command: 'yes','y','no','n'"));
+            rl.close();
+            consolloge(packagename);
+        }
+    });
 }
 
 

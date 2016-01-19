@@ -58,17 +58,48 @@ gulp.task('update-modul', function () {
 });
 
 ```
+
+```javascript
+var upmodul = require("gulp-update-modul");
+
+
+//watch
+gulp.task('watch', function () {
+    gulp.start('update-modul');
+});
+
+//update-modul
+gulp.task('update-modul', function () {
+    gulp.src('package.json')
+    .pipe(upmodul('latest, true')); //update all modules latest version.
+});
+
+```
 ## API
 
-### upmodul('options')
+### upmodul('version, process')
++ Version
 
-+ latest ('Default')
+  + latest ('Default')
 
-  Update all modules latest version.
+    Update all modules 'latest' version.
 
-+ wanted 
 
-  update to all modules wanted  version.
+  + wanted 
+
+    Update to all modules 'wanted'  version.
+
++ Process
+
+  + true ('Default')
+
+    Update in auto mode.
+
+
+  + false
+    
+	Asks: Do you want to update: packagename  [Y(yes)/N(no)] ?
+
 
 
 ## Bugs
