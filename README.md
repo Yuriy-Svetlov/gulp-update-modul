@@ -7,6 +7,7 @@
 
 [![build status](https://travis-ci.org/semiromid/gulp-update-modul.svg)](https://travis-ci.org/semiromid/gulp-update-modul)
 
+![Image](https://raw.githubusercontent.com/semiromid/gulp-update-modul/master/screenshots/scr.png)
 
 [En]
 gulp-update-modul is a plugin to auto update all node modules. 
