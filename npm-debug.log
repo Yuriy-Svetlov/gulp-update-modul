@@ -1,0 +1,137 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.3.12
+3 info using node@v5.4.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'E:\\Developers\\WebDeveloper\\OpenServer-WebProg\\domains\\projectapi2\\node_modules\\gulp-update-modul',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\Юрий\AppData\Roaming\npm-cache\gulp-update-modul\1.4.7\package.tgz not in flight; packing
+9 info lifecycle gulp-update-modul@1.4.7~prepublish: gulp-update-modul@1.4.7
+10 silly lifecycle gulp-update-modul@1.4.7~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ 'C:\\Users\\Юрий\\AppData\\Roaming\\npm-cache\\gulp-update-modul\\1.4.7\\package.tgz',
+11 verbose tar pack   'E:\\Developers\\WebDeveloper\\OpenServer-WebProg\\domains\\projectapi2\\node_modules\\gulp-update-modul' ]
+12 verbose tarball C:\Users\Юрий\AppData\Roaming\npm-cache\gulp-update-modul\1.4.7\package.tgz
+13 verbose folder E:\Developers\WebDeveloper\OpenServer-WebProg\domains\projectapi2\node_modules\gulp-update-modul
+14 verbose addLocalTarball adding from inside cache C:\Users\Юрий\AppData\Roaming\npm-cache\gulp-update-modul\1.4.7\package.tgz
+15 silly cache afterAdd gulp-update-modul@1.4.7
+16 verbose afterAdd C:\Users\Юрий\AppData\Roaming\npm-cache\gulp-update-modul\1.4.7\package\package.json not in flight; writing
+17 verbose afterAdd C:\Users\Юрий\AppData\Roaming\npm-cache\gulp-update-modul\1.4.7\package\package.json written
+18 silly publish { name: 'gulp-update-modul',
+18 silly publish   author: { name: 'Riko Vironi', email: 'xor.wind@mail.ru' },
+18 silly publish   version: '1.4.7',
+18 silly publish   description: 'Auto update all node modules',
+18 silly publish   main: 'index.js',
+18 silly publish   scripts: { start: 'supervisor app', test: 'mocha --no-timeouts' },
+18 silly publish   keywords:
+18 silly publish    [ 'update',
+18 silly publish      'update gulp',
+18 silly publish      'update gulp plugin',
+18 silly publish      'update-gulp plugin',
+18 silly publish      'gulp-update',
+18 silly publish      'gulp update',
+18 silly publish      'gulp-update-plugin',
+18 silly publish      'gulp-update-plugin',
+18 silly publish      'gulp update',
+18 silly publish      'gulp update plugin',
+18 silly publish      'gulp update modul',
+18 silly publish      'update-',
+18 silly publish      'update node',
+18 silly publish      'update node modul',
+18 silly publish      'update node modules',
+18 silly publish      'update-node',
+18 silly publish      'update-node modul',
+18 silly publish      'update-node modules',
+18 silly publish      'update nodejs',
+18 silly publish      'update nodejs modul',
+18 silly publish      'update nodejs modules',
+18 silly publish      'update-nodejs',
+18 silly publish      'update-nodejs modul',
+18 silly publish      'update-nodejs modules',
+18 silly publish      'gulp update-nodejs',
+18 silly publish      'gulp update-nodejs modul',
+18 silly publish      'gulp update-nodejs modules',
+18 silly publish      'gulp update-node',
+18 silly publish      'gulp update-node modul',
+18 silly publish      'gulp update-node modules',
+18 silly publish      'gulp-update-nodejs',
+18 silly publish      'gulp-update-nodejs modul',
+18 silly publish      'gulp-update-nodejs modules',
+18 silly publish      'gulp-update-node',
+18 silly publish      'gulp-update-node modul',
+18 silly publish      'gulp-update-node modules',
+18 silly publish      'upgrade node',
+18 silly publish      'upgrade-node',
+18 silly publish      'update node',
+18 silly publish      'gulpplugin' ],
+18 silly publish   license: 'MIT',
+18 silly publish   devDependencies: { chalk: '^1.1.1', mocha: '^2.3.4', should: '^8.1.1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git://github.com/semiromid/gulp-update-modul.git' },
+18 silly publish   dependencies: { colors: '^1.1.2', should: '^8.1.1' },
+18 silly publish   readme: '# gulp-update-module\r\n\r\n> [gulp-update-module](https://github.com/semiromid/gulp-update-module) is a gulp plugin to update modules easily.\r\n\r\n\r\n\r\n[![NPM](https://nodei.co/npm/gulp-update-modul.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gulp-update-modul/)\r\n\r\n\r\n[![build status](https://travis-ci.org/semiromid/gulp-update-modul.svg)](https://travis-ci.org/semiromid/gulp-update-modul)\r\n\r\n![Image](https://raw.githubusercontent.com/semiromid/gulp-update-modul/master/screenshots/scr.png)\r\n\r\n[En]\r\ngulp-update-module is a plugin to auto update all node modules. \r\n\r\n[Ru]\r\ngulp-update-module предназначен для автоматического обновления всех установленных модулей в приложении.\r\n\r\n\r\n\r\n## Install\r\n\r\ngulp-update-module provides simple  updates all modules.\r\n\r\nFirst, install `gulp-update-module` as dependency:\r\n\r\n```shell\r\nnpm install --save gulp-update-module \r\n```\r\n\r\n## Usage\r\n\r\nThen, add it to your gulpfile.js:\r\n\r\n```javascript\r\nvar upmodule = require("gulp-update-module");\r\n\r\ngulp.task(\'update-module\', function () {\r\n    gulp.src(\'package.json\')\r\n    .pipe(upmodule(\'latest\')); //update all modules latest version.\r\n});\r\n```\r\n\r\n\r\n## Example\r\n\r\n```javascript\r\nvar upmodule = require("gulp-update-module");\r\n\r\n\r\n//watch\r\ngulp.task(\'watch\', function () {\r\n    gulp.start(\'update-module\');\r\n});\r\n\r\n//update-module\r\ngulp.task(\'update-module\', function () {\r\n    gulp.src(\'package.json\')\r\n    .pipe(upmodule(\'latest\')); //update all modules latest version.\r\n});\r\n\r\n```\r\n\r\n```javascript\r\nvar upmodule = require("gulp-update-module");\r\n\r\n\r\n//watch\r\ngulp.task(\'watch\', function () {\r\n    gulp.start(\'update-module\');\r\n});\r\n\r\n//update-module\r\ngulp.task(\'update-module\', function () {\r\n    gulp.src(\'package.json\')\r\n    .pipe(upmodule(\'latest, true\')); //update all modules latest version.\r\n});\r\n\r\n```\r\n## API\r\n\r\n### upmodule(\'version, process\')\r\n+ Version\r\n\r\n  + latest (\'Default\')\r\n\r\n    Update all modules \'latest\' version.\r\n\r\n  + wanted \r\n\r\n    Update to all modules \'wanted\'  version.\r\n\r\n+ Process\r\n\r\n  + true (\'Default\')\r\n\r\n    Update in auto mode.\r\n\r\n  + false\r\n\r\n    Asks: Do you want to update: packagename  [Y(yes)/N(no)] ?\r\n\r\n\r\n\r\n## Bugs\r\n\r\n* Please to write\r\n\r\n  * github - [github.com/semiromid/gulp-update-module](https://github.com/semiromid/gulp-update-module) \r\n\r\n  * email - xor.wind@mail.ru\r\n \r\n\r\n## License\r\n\r\n[MIT License](http://en.wikipedia.org/wiki/MIT_License)\r\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   bugs: { url: 'https://github.com/semiromid/gulp-update-modul/issues' },
+18 silly publish   homepage: 'https://github.com/semiromid/gulp-update-modul',
+18 silly publish   _id: 'gulp-update-modul@1.4.7',
+18 silly publish   _shasum: 'c22098af61b6d80f34cf83dee7b2bce8e93b1eab',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name gulp-update-modul
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/gulp-update-modul
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading C:\Users\Юрий\AppData\Roaming\npm-cache\gulp-update-modul\1.4.7\package.tgz
+26 verbose request uri https://registry.npmjs.org/gulp-update-modul
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 06:30:26
+29 verbose request using bearer token for auth
+30 verbose request id bb75e042a4cc803f
+31 http request PUT https://registry.npmjs.org/gulp-update-modul
+32 http 403 https://registry.npmjs.org/gulp-update-modul
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Thu, 21 Jan 2016 04:30:31 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-fra1239-FRA',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1453350630.000741,VS0,VE1581' }
+34 verbose request invalidating C:\Users\Юрий\AppData\Roaming\npm-cache\registry.npmjs.org\gulp-update-modul on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 1.4.7." : gulp-update-modul
+36 verbose stack     at makeError (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+36 verbose stack     at Request._callback (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+36 verbose stack     at Request.self.callback (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
+36 verbose stack     at emitTwo (events.js:87:13)
+36 verbose stack     at Request.emit (events.js:172:7)
+36 verbose stack     at Request.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1082:10)
+36 verbose stack     at emitOne (events.js:82:20)
+36 verbose stack     at Request.emit (events.js:169:7)
+36 verbose stack     at IncomingMessage.<anonymous> (D:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid gulp-update-modul
+39 verbose cwd E:\Developers\WebDeveloper\OpenServer-WebProg\domains\projectapi2\node_modules\gulp-update-modul
+40 error Windows_NT 6.3.9600
+41 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+42 error node v5.4.1
+43 error npm  v3.3.12
+44 error code E403
+45 error "You cannot publish over the previously published version 1.4.7." : gulp-update-modul
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]

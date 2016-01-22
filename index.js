@@ -14,6 +14,8 @@ module.exports = function (latest) {
     var readable = new Stream.Transform({ objectMode: true });
     readable._transform = function (file, unused, callback) {
 
+    //console.log(colors.red('This version will be removed. Download the new version - https://www.npmjs.com/package/gulp-update-module'));
+
     autoupdate = 'true';
     g_losk_version = "latest";
      // [START]
@@ -318,7 +320,7 @@ function consolloge(packagename, dev_or_save) {
         } else {
             console.log(colors.red("Use the command: 'yes','y','no','n'"));
             rl.close();
-            consolloge(packagename);
+            consolloge(packagename, dev_or_save);
         }
     });
 }
