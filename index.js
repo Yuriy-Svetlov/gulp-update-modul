@@ -31,6 +31,7 @@ module.exports = function (latest) {
                    break
            }
        }
+       
     //s------------------------------------------------------------------
     exec_command0(g_losk_version);
 
