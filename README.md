@@ -1,6 +1,6 @@
-# gulp-update-module
+# gulp-update-modul
 
-> [gulp-update-module](https://github.com/semiromid/gulp-update-module) is a gulp plugin to update modules easily.
+> [gulp-update-modul](https://github.com/semiromid/gulp-update-modul) is a gulp plugin to update modules easily.
 
 
 
@@ -12,21 +12,21 @@
 ![Image](https://raw.githubusercontent.com/semiromid/gulp-update-modul/master/screenshots/scr.png)
 
 [En]
-gulp-update-module is a plugin to auto update all node modules. 
+gulp-update-modul is a plugin to auto update all node modules. 
 
 [Ru]
-gulp-update-module предназначен для автоматического обновления всех установленных модулей в приложении.
+gulp-update-modul предназначен для автоматического обновления всех установленных модулей в приложении.
 
 
 
 ## Install
 
-gulp-update-module provides simple  updates all modules.
+gulp-update-modul provides simple  updates all modules.
 
-First, install `gulp-update-module` as dependency:
+First, install `gulp-update-modul` as dependency:
 
 ```shell
-npm install --save gulp-update-module 
+npm install --save gulp-update-modul
 ```
 
 ## Usage
@@ -34,11 +34,11 @@ npm install --save gulp-update-module
 Then, add it to your gulpfile.js:
 
 ```javascript
-var upmodule = require("gulp-update-module");
+var upmodul = require("gulp-update-modul");
 
-gulp.task('update-module', function () {
+gulp.task('update-modul', function () {
     gulp.src('package.json')
-    .pipe(upmodule('latest')); //update all modules latest version.
+    .pipe(upmodul('latest')); //update all modules latest version.
 });
 ```
 
@@ -46,41 +46,41 @@ gulp.task('update-module', function () {
 ## Example
 
 ```javascript
-var upmodule = require("gulp-update-module");
+var upmodul = require("gulp-update-modul");
 
 
 //watch
 gulp.task('watch', function () {
-    gulp.start('update-module');
+    gulp.start('update-modul');
 });
 
-//update-module
-gulp.task('update-module', function () {
+//update-modul
+gulp.task('update-modul', function () {
     gulp.src('package.json')
-    .pipe(upmodule('latest')); //update all modules latest version.
+    .pipe(upmodul('latest')); //update all modules latest version.
 });
 
 ```
 
 ```javascript
-var upmodule = require("gulp-update-module");
+var upmodul = require("gulp-update-modul");
 
 
 //watch
 gulp.task('watch', function () {
-    gulp.start('update-module');
+    gulp.start('update-modul');
 });
 
-//update-module
-gulp.task('update-module', function () {
+//update-modul
+gulp.task('update-modul', function () {
     gulp.src('package.json')
-    .pipe(upmodule('latest, true')); //update all modules latest version.
+    .pipe(upmodul('latest, true')); //update all modules latest version.
 });
 
 ```
 ## API
 
-### upmodule('version, process')
+### upmodul('version, process')
 + Version
 
   + latest ('Default')
@@ -107,7 +107,7 @@ gulp.task('update-module', function () {
 
 * Please to write
 
-  * github - [github.com/semiromid/gulp-update-module](https://github.com/semiromid/gulp-update-module) 
+  * github - [github.com/semiromid/gulp-update-modul](https://github.com/semiromid/gulp-update-modul) 
 
   * email - xor.wind@mail.ru
  
