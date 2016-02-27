@@ -38,7 +38,7 @@ var upmodul = require("gulp-update-modul");
 
 gulp.task('update-modul', function () {
     gulp.src('package.json')
-    .pipe(upmodul('latest')); //update all modules latest version.
+    .pipe(upmodul('latest', 'false')); //update all modules latest version.
 });
 ```
 
@@ -57,7 +57,7 @@ gulp.task('watch', function () {
 //update-modul
 gulp.task('update-modul', function () {
     gulp.src('package.json')
-    .pipe(upmodul('latest')); //update all modules latest version.
+    .pipe(upmodul('latest', 'false')); //update all modules latest version.
 });
 
 ```
